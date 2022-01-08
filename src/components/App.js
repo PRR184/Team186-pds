@@ -7,6 +7,7 @@ import {
   loadWeb3,
   loadAccount,
   loadPDS,
+  loadShops,
 } from '../store/interactions'
 import { pdsLoadedSelector } from '../store/selectors'
 import './App.css';
@@ -28,6 +29,9 @@ class App extends Component {
       window.alert('PDS smart contract not detected on the current network. Please select another network with Metamask.')
       return
     }
+
+    await loadShops(pds,dispatch)
+
     try{
     //Fetching State Admin.
     // const ans  = await pds.methods.stateAdmin('0x1b41588Ca988788dD5247Dde28aAcbCF5f13B7f8').call()

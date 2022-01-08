@@ -24,7 +24,7 @@ module.exports = async function(callback){
         await wait(1);
         const state=accounts[0];
         const d1=accounts[1];
-        const d2=accounts[2];
+        const d2='0x148f8382ccc9E027b017c52b0c38DAB67809EF1d';
         const s1=accounts[3];
         const s2=accounts[4];
         const s3=accounts[5];
@@ -71,92 +71,92 @@ module.exports = async function(callback){
         console.log('AddedDistrictAdmin as', d2);
         await wait(1)
 
-        //Adding shops
-        await pds.addShops(shopId1,"Raghav",s1,"More Complex, Miryalaguda",{from:d1});
-        console.log('Adding Shops as', s1);
-        await pds.addShops(shopId2,"Rahul",s2,"Ram Complex, Miryalaguda",{from:d1});
-        console.log('Adding Shops as', s2);
-        await pds.addShops(shopId3,"Raju",s3,"Baraf Complex, Miryalaguda",{from:d2});
-        console.log('Adding Shops as', s3);
-        await wait(1)
+        // //Adding shops
+        // await pds.addShops(shopId1,"Raghav",s1,"More Complex, Miryalaguda",{from:d1});
+        // console.log('Adding Shops as', s1);
+        // await pds.addShops(shopId2,"Rahul",s2,"Ram Complex, Miryalaguda",{from:d1});
+        // console.log('Adding Shops as', s2);
+        // await pds.addShops(shopId3,"Raju",s3,"Baraf Complex, Miryalaguda",{from:d2});
+        // console.log('Adding Shops as', s3);
+        // await wait(1)
 
-        //Adding Consumer
-        await pds.addConsumer(c1,{from:d1});
-        console.log('Adding Consumers as', c1);
-        await pds.addConsumer(c2,{from:d1});
-        console.log('Adding Consumers as', c2);
-        await pds.addConsumer(c3,{from:d1});
-        console.log('Adding Consumers as', c3);
-        await pds.addConsumer(c4,{from:d2});
-        console.log('Adding Consumers as', c4);
-        await wait(1)
+        // //Adding Consumer
+        // await pds.addConsumer(c1,{from:d1});
+        // console.log('Adding Consumers as', c1);
+        // await pds.addConsumer(c2,{from:d1});
+        // console.log('Adding Consumers as', c2);
+        // await pds.addConsumer(c3,{from:d1});
+        // console.log('Adding Consumers as', c3);
+        // await pds.addConsumer(c4,{from:d2});
+        // console.log('Adding Consumers as', c4);
+        // await wait(1)
 
-        //Adding Items
-        await pds.addItems(itemId1,"Rice",1);
-        console.log('Adding Items as', itemId1);
-        await pds.addItems(itemId2,"Wheat",2); 
-        console.log('Adding Items as', itemId2);
-        await wait(1)
+        // //Adding Items
+        // await pds.addItems(itemId1,"Rice",1);
+        // console.log('Adding Items as', itemId1);
+        // await pds.addItems(itemId2,"Wheat",2); 
+        // console.log('Adding Items as', itemId2);
+        // await wait(1)
 
-        //Add Bags
-        await pds.addBags(1,"Rice",{from:state});
-        await pds.addBags(2,"Rice",{from:state});
-        await pds.addBags(3,"Rice",{from:state});
-        await pds.addBags(4,"Rice",{from:state});
-        await pds.addBags(5,"Rice",{from:state});
-        await pds.addBags(6,"Rice",{from:state});
-        await pds.addBags(7,"Rice",{from:state});
-        await pds.addBags(8,"Rice",{from:state});
-        await pds.addBags(9,"Rice",{from:state});
-        await pds.addBags(10,"Rice",{from:state});
-        await pds.addBags(11,"Wheat",{from:state});
-        await pds.addBags(12,"Wheat",{from:state});
-        await pds.addBags(13,"Wheat",{from:state});
-        await pds.addBags(15,"Wheat",{from:state});
-        await pds.addBags(16,"Wheat",{from:state});
-        await pds.addBags(17,"Wheat",{from:state});
-        await pds.addBags(18,"Wheat",{from:state});
-        await pds.addBags(19,"Wheat",{from:state});
-        await pds.addBags(20,"Wheat",{from:state});
-        console.log('Adding Bags');
-        await wait(1)
+        // //Add Bags
+        // await pds.addBags(1,"Rice",{from:state});
+        // await pds.addBags(2,"Rice",{from:state});
+        // await pds.addBags(3,"Rice",{from:state});
+        // await pds.addBags(4,"Rice",{from:state});
+        // await pds.addBags(5,"Rice",{from:state});
+        // await pds.addBags(6,"Rice",{from:state});
+        // await pds.addBags(7,"Rice",{from:state});
+        // await pds.addBags(8,"Rice",{from:state});
+        // await pds.addBags(9,"Rice",{from:state});
+        // await pds.addBags(10,"Rice",{from:state});
+        // await pds.addBags(11,"Wheat",{from:state});
+        // await pds.addBags(12,"Wheat",{from:state});
+        // await pds.addBags(13,"Wheat",{from:state});
+        // await pds.addBags(15,"Wheat",{from:state});
+        // await pds.addBags(16,"Wheat",{from:state});
+        // await pds.addBags(17,"Wheat",{from:state});
+        // await pds.addBags(18,"Wheat",{from:state});
+        // await pds.addBags(19,"Wheat",{from:state});
+        // await pds.addBags(20,"Wheat",{from:state});
+        // console.log('Adding Bags');
+        // await wait(1)
 
-        //transfer Bags from state1 to district1
-        await pds.transferedBags(stateId,districtId1,[1,2,3,4,5,6,11,12],{from:state});
-        console.log('Transfer from State to District1');
-        await pds.transferedBags(stateId,districtId2,[7,8,9,14,15,16],{from:state});
-        console.log('Transfer from State to District2');
-        await pds.transferedBags(districtId1,shopId1,[1,2,3,4],{from:d1})
-        console.log('Transfer from District1 to Shop1');
-        await pds.transferedBags(districtId1,shopId2,[5,6,11,12],{from:d1})
-        console.log('Transfer from District1 to Shop2');
-        await pds.transferedBags(districtId2,shopId3,[7,8,9,16],{from:d2})
-        console.log('Transfer from District2 to Shop3');
-        await wait(1)
+        // //transfer Bags from state1 to district1
+        // await pds.transferedBags(stateId,districtId1,[1,2,3,4,5,6,11,12],{from:state});
+        // console.log('Transfer from State to District1');
+        // await pds.transferedBags(stateId,districtId2,[7,8,9,14,15,16],{from:state});
+        // console.log('Transfer from State to District2');
+        // await pds.transferedBags(districtId1,shopId1,[1,2,3,4],{from:d1})
+        // console.log('Transfer from District1 to Shop1');
+        // await pds.transferedBags(districtId1,shopId2,[5,6,11,12],{from:d1})
+        // console.log('Transfer from District1 to Shop2');
+        // await pds.transferedBags(districtId2,shopId3,[7,8,9,16],{from:d2})
+        // console.log('Transfer from District2 to Shop3');
+        // await wait(1)
 
-        //transfer Bags from state1 to district1
-        await pds.receivedBags(stateId,districtId1,[1,2,3,4,5,6,11,12],{from:d1});
-        console.log('Received from State to District1');
-        await pds.receivedBags(stateId,districtId2,[7,8,9,14,15,16],{from:d2});
-        console.log('Received from State to District2');
-        await pds.receivedBags(districtId1,shopId1,[1,2,3,4],{from:s1})
-        console.log('Received from District1 to Shop1');
-        await pds.receivedBags(districtId1,shopId2,[5,6,12],{from:s2}) // 11 I kept Missing
-        console.log('Received from District1 to Shop2');
-        await pds.receivedBags(districtId2,shopId3,[7,8,9,16],{from:s3})
-        console.log('Received from District2 to Shop3');
-        await wait(1)
+        // //transfer Bags from state1 to district1
+        // await pds.receivedBags(stateId,districtId1,[1,2,3,4,5,6,11,12],{from:d1});
+        // console.log('Received from State to District1');
+        // await pds.receivedBags(stateId,districtId2,[7,8,9,14,15,16],{from:d2});
+        // console.log('Received from State to District2');
+        // await pds.receivedBags(districtId1,shopId1,[1,2,3,4],{from:s1})
+        // console.log('Received from District1 to Shop1');
+        // await pds.receivedBags(districtId1,shopId2,[5,6,12],{from:s2}) // 11 I kept Missing
+        // console.log('Received from District1 to Shop2');
+        // await pds.receivedBags(districtId2,shopId3,[7,8,9,16],{from:s3})
+        // console.log('Received from District2 to Shop3');
+        // await wait(1)
         
-        //Making Order
-        await pds.orderMade(c1,shopId1,[itemId1, itemId2],[25, 50],{from:s1});
-        console.log('Transfer from Shop1 to Consumer1');
-        await pds.orderMade(c2,shopId1,[itemId1, itemId2],[30, 40],{from:s1});
-        console.log('Transfer from Shop1 to Consumer2');
-        await pds.orderMade(c3,shopId2,[itemId1, itemId2],[20, 1],{from:s2});
-        console.log('Transfer from Shop2 to Consumer3');
-        await pds.orderMade(c4,shopId3,[itemId1, itemId2],[29, 49],{from:s3});
-        console.log('Transfer from Shop3 to Consumer4');
-        await wait(1)
+        // //Making Order
+        // await pds.orderMade(c1,shopId1,[itemId1, itemId2],[25, 50],{from:s1});
+        // console.log('Transfer from Shop1 to Consumer1');
+        // await pds.orderMade(c2,shopId1,[itemId1, itemId2],[30, 40],{from:s1});
+        // console.log('Transfer from Shop1 to Consumer2');
+        // await pds.orderMade(c3,shopId2,[itemId1, itemId2],[20, 1],{from:s2});
+        // console.log('Transfer from Shop2 to Consumer3');
+        // await pds.orderMade(c4,shopId3,[itemId1, itemId2],[29, 49],{from:s3});
+        // console.log('Transfer from Shop3 to Consumer4');
+        // await wait(1)
     
       }
       catch(error) {
