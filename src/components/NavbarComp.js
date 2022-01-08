@@ -18,8 +18,8 @@ import Adddistrict from './Adddistrict';
 import Districtres from './Districtres';
 import Shopres from './Shopres';
 
-export default class NavbarComp extends Component {
-    render() {
+const NavbarComp=({transfered})=>{
+        console.log('transfered NavBar',transfered);
         return (
             <Router>
                 <div>
@@ -101,7 +101,7 @@ export default class NavbarComp extends Component {
                         </Route> 
 
                         <Route path="/transactions">
-                            <Transactions />
+                            <Transactions transfered={transfered}/>
                         </Route>
 
                         <Route path="/details">
@@ -121,6 +121,6 @@ export default class NavbarComp extends Component {
                     </Switch>
                 </div>
             </Router>
-        )
-    }
-}
+)}
+
+export default NavbarComp;

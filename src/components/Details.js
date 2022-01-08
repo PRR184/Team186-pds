@@ -3,9 +3,7 @@ import { Form, Button } from 'react-bootstrap'
 import {Message} from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import { InputGroup,FormControl } from 'react-bootstrap'
-import { 
-    shopDetailSelector
-} from '../store/selectors'
+import {pdsSelector} from '../store/selectors'
 
 class Details extends Component {
     state = {
@@ -22,16 +20,12 @@ class Details extends Component {
 
     onSubmit = async(event)=>{
         event.preventDefault();
-        const {shops}=this.props
         this.setState({loading:true,errorMessage:''});
-
+        const {pds}=this.props
         try{
-            const shop=shops.filter(shop=>shop.id===this.state.id);
-            if(shop.length===0){
-                throw Error("Wrong Id");
-            }
+            const shop = await pds.methods.shops(this.state.id).call();
             this.setState({
-                shop:shop[0]
+                shop:shop
             })
         }catch(e){
             this.setState({
@@ -56,16 +50,16 @@ class Details extends Component {
 
                     <Button primary type="submit" loading={this.state.loading}>Create!</Button>
                 </Form>
-
-                {console.log('shop',this.state.shop)}
+                {this.state.shop.name}
             </div>
         )
     }
 }
 
 function mapStateToProps(state) {
+  
     return {
-        shops:shopDetailSelector(state)
+      pds: pdsSelector(state),
     }
   }
   

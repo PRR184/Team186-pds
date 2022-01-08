@@ -7,7 +7,6 @@ import {
   loadWeb3,
   loadAccount,
   loadPDS,
-  loadShops,
 } from '../store/interactions'
 import { pdsLoadedSelector } from '../store/selectors'
 import './App.css';
@@ -15,6 +14,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from './NavbarComp';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      transfered:[],
+      received:[],
+      orders:[]
+    };
+
+  }
   componentWillMount() {
     this.loadBlockchainData(this.props.dispatch)
   }
@@ -29,33 +38,57 @@ class App extends Component {
       window.alert('PDS smart contract not detected on the current network. Please select another network with Metamask.')
       return
     }
-
-    await loadShops(pds,dispatch)
-
+    let transfers;
     try{
-    //Fetching State Admin.
-    // const ans  = await pds.methods.stateAdmin('0x1b41588Ca988788dD5247Dde28aAcbCF5f13B7f8').call()
-    // console.log(ans);
-
     //Shop Details.
     const shop = await pds.methods.shops(100).call();
     console.log('shopDetails',shop);
+
     //Transfered Bags.
     const transferHistory = await pds.getPastEvents('Transfered', { fromBlock: 0, toBlock: 'latest' })
-    const transfers = await transferHistory.map((event) => event.returnValues)
+    transfers = await transferHistory.map((event) => {
+    const data =event.returnValues;
+    return {
+                fromId:data.fromId,
+                toId:data.toId,
+                Bags:data.bagIds,
+                time:data.timestamp,
+            }
+    })
     console.log('transfers',transfers);
 
-    //Received Bags
-    const receivedHistory = await pds.getPastEvents('Received', { fromBlock: 0, toBlock: 'latest' })
-    const received = await receivedHistory.map((event) => event.returnValues)
+    // Received Bags
+      const receivedHistory = await pds.getPastEvents('Received', { fromBlock: 0, toBlock: 'latest' })
+      const received = await receivedHistory.map((event) => {
+            const data =event.returnValues;
+            return {
+              fromId:data.fromId,
+              toId:data.toId,
+              Bags:data.bagIds,
+              time:data.timestamp,
+          }
+      })
     console.log('received',received);
 
     //OrdersMade
     const ordersHistory = await pds.getPastEvents('Order', { fromBlock: 0, toBlock: 'latest' })
-    const orders = await ordersHistory.map((event) => event.returnValues)
+    const orders = await ordersHistory.map((event) => {
+      const data =event.returnValues;
+      return {
+        customerMetamaskAccount:data.customerAddress,
+        shopId:data.shopId,
+        itemIds:data.itemIds,
+        eachItemQuantities:data.quantities,
+        time:data.timestamp,
+
+    }
+    })
     console.log('orders',orders);    
+    this.setState({
+      transfered:transfers
+    })
     }catch(e){
-      window.alert('Not State Admin')
+      window.alert('Transactions not Fetching')
     }
 
   }
@@ -63,11 +96,9 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <NavbarComp/>
-        {/* <Navbar /> */}
+        <NavbarComp transfered={this.state.transfered}/>
         { this.props.contractsLoaded ? <div>ContractLoaded(show content)</div>  : <div >Failure</div> }
       </div>
-      
     );
   }
 }

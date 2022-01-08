@@ -14,14 +14,7 @@ function web3(state = {}, action) {
 function pds(state = {}, action) {
   switch (action.type) {
     case 'PDS_LOADED':
-      return { ...state, loaded: true, contract: action.contract, shops:[]}
-    case 'ADD_SHOP':
-      return { ...state,
-        shops:[
-        ...state.shops,
-        action.shop
-        ],
-      }
+      return { ...state, loaded: true, contract: action.contract}
     default:
     return state
   }

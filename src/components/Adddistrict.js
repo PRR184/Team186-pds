@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import {Message} from 'semantic-ui-react';
 import { connect } from 'react-redux'
-import { addShop } from '../store/interactions';
 import { accountSelector, pdsSelector} from '../store/selectors';
 
 class Addistrict extends Component {
@@ -17,10 +16,8 @@ class Addistrict extends Component {
 
     onSubmit = async(event)=>{
         event.preventDefault();
-        const {dispatch,pds,sender}=this.props
+        const {pds,sender}=this.props
         this.setState({loading:true,errorMessage:''});
-        console.log(pds,sender);
-
         try{
             // const accounts = await web3.eth.getAccounts();
             // await factory.methods.createCampaign(this.state.minimumContribution).send({from:accounts[0]});
@@ -32,8 +29,14 @@ class Addistrict extends Component {
                 address:this.state.address,
                 location:this.state.location
             }
-            console.log('order',order);
-            await addShop(dispatch,pds,order,sender);
+              await pds.methods.addShops(order.id,order.name,order.address,order.location).send({ from: sender })
+              .on('transactionHash', (hash) => {
+                  console.log('order', order);
+              })
+              .on('error',(error) => {
+                console.error(error)
+                window.alert(`There was an error!`)
+              })
 
         }catch(err){
             this.setState({errorMessage:err.message});
@@ -44,7 +47,6 @@ class Addistrict extends Component {
         name:'',
         address:'',
         location:'',
-        errorMessage:'',
         loading:false
         });
     };

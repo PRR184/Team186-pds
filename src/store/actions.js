@@ -20,9 +20,3 @@ export function pdsLoaded(contract) {
     contract
   }
 }
-export function addShopTo(shop) {
-  return {
-    type: 'ADD_SHOP',
-    shop
-  }
-}
