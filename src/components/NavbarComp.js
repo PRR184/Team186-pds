@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import './App.css'
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,14 +17,16 @@ import Addconsumer from './Addconsumer';
 import Adddistrict from './Adddistrict';
 import Districtres from './Districtres';
 import Shopres from './Shopres';
+import Transfer from './Transfer';
+import AddReceivedBags from './AddReceivedBags';
 
 const NavbarComp=({transfered,received, orders})=>{
         return (
             <Router>
-                <div>
+                <div className='navb'>
 
-                    <Navbar bg="dark" variant={"dark"} expand="lg">
-                        <Navbar.Brand>Public Distribution System</Navbar.Brand>
+                    <Navbar bg="dark" variant={"dark"} expand="lg" className='nvb'>
+                        {/* <Navbar.Brand><img src="Logo.png"  /></Navbar.Brand> */}
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
                             <Nav
@@ -33,39 +34,41 @@ const NavbarComp=({transfered,received, orders})=>{
                                 style={{ maxHeight: '100px' }}
                                 navbarScroll
                             >
-                                <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/details">Shop Details</Nav.Link>
-                                <Nav.Link as={Link} to="/order">Make Order</Nav.Link>
-                                <Nav.Link as={Link} to="/transactions">Transactions</Nav.Link>
-                                <Nav.Link as={Link} to="/usertrans">User Transactions</Nav.Link>
-
-                                <NavDropdown
+                                <Nav.Link as={Link} to="/home" className='header'>Home</Nav.Link>
+                                <Nav.Link as={Link} to="/details" className='header'>Shop&nbsp;Details</Nav.Link>
+                                <Nav.Link as={Link} to="/order" className='header'>Make&nbsp;Order</Nav.Link>
+                                <Nav.Link as={Link} to="/transfer" className='header'>Add&nbsp;TransferedBags</Nav.Link>
+                                <Nav.Link as={Link} to="/AddReceivedBags" className='header'>Add&nbsp;ReceivedBags</Nav.Link>
+                                <Nav.Link as={Link} to="/transactions" className='header'>Transactions</Nav.Link>
+                                <Nav.Link as={Link} to="/usertrans" className='header'>User&nbsp;Transactions</Nav.Link>
+                                <Nav.Link as={Link} to="/districtres" className='header'>View&nbsp;District&nbsp;Results</Nav.Link>
+                                {/* <NavDropdown
                                     id="nav-dropdown-dark-example"
                                     title="Result"
-                                    menuVariant="primary"
+                                    menuVariant="dark" className='header'
                                 >
                                     <NavDropdown.Item>                                 
-                                        <Nav.Link as={Link} to="/districtres">View District Results</Nav.Link>
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item> 
-                                        <Nav.Link as={Link} to="/shopres">View Shop Results</Nav.Link>
-                                    </NavDropdown.Item> 
-                                </NavDropdown>
+                                        
+                                    </NavDropdown.Item> */}
+                                    {/* <NavDropdown.Item> 
+                                        <Nav.Link as={Link} to="/shopres" className='header'>View Shop Results</Nav.Link>
+                                    </NavDropdown.Item>  */}
+                                {/* </NavDropdown> */}
                                 
 
 
-                                <NavDropdown
+                                {/* <NavDropdown
                                     id="nav-dropdown-dark-example"
                                     title="Add"
-                                    menuVariant="dark"
+                                    menuVariant="dark" className='header'
                                 >
                                     <NavDropdown.Item>                                 
-                                        <Nav.Link as={Link} to="/adddistrict" class = "Dropdown">Add a District</Nav.Link>
+                                        <Nav.Link as={Link} to="/adddistrict" className='header'>Add a District</Nav.Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item> 
-                                        <Nav.Link as={Link} to="/addconsumer" class = "Dropdown">Add a Consumer</Nav.Link>
+                                        <Nav.Link as={Link} to="/addconsumer" className='header'>Add a Consumer</Nav.Link>
                                     </NavDropdown.Item> 
-                                </NavDropdown>
+                                </NavDropdown> */}
 
 
                             </Nav>
@@ -76,21 +79,28 @@ const NavbarComp=({transfered,received, orders})=>{
                 <div>
                     <Switch>
 
-                    <Route path="/shopres">
-                            <Shopres />
+                    <Route path="/transfer">
+                            <Transfer />
                         </Route>
+                    <Route path="/AddReceivedBags">
+                            <AddReceivedBags />
+                    </Route>
+
+                    {/* <Route path="/shopres">
+                            <Shopres />
+                        </Route> */}
 
                     <Route path="/districtres">
-                            <Districtres transfered={transfered} received={received} orders={orders}/>
+                        <Districtres transfered={transfered} received={received} orders={orders}/>
                         </Route>
 
-                    <Route path="/adddistrict">
+                    {/* <Route path="/adddistrict">
                             <Adddistrict />
                         </Route>
 
                     <Route path="/addconsumer">
                             <Addconsumer />
-                        </Route>
+                        </Route> */}
 
                     <Route path="/results">
                             <Results />
@@ -115,8 +125,6 @@ const NavbarComp=({transfered,received, orders})=>{
                         <Route path="/">
                             <Home />
                         </Route>
-                        
-                        
                         
                     </Switch>
                 </div>

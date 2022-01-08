@@ -24,17 +24,32 @@ const Transactions = ({transfered,received})=>{
                     <tr>
                         <td>{transfer.fromId}</td>
                         <td>{transfer.toId}</td>
-                        <td>{transfer.Bags.map(bag=><td>{`   ${bag}  `}</td>)}</td>
+                        <td>{transfer.Bags.map(bag=><td>{`| ${bag} |`}</td>)}</td>
                         <td>{transfer.time}</td>
                     </tr>
                     )
                     })}
+                </tbody>
+                </Table>
+
+                <h2> Received Transactions </h2>
+                <Table striped bordered hover>
+                <thead>
+                    <tr>
+                    {/* <th>#</th> */}
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Bag List</th>
+                    <th>Transaction Time</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {received.map(transfer=>{
                     return (
                     <tr>
                         <td>{transfer.fromId}</td>
                         <td>{transfer.toId}</td>
-                        <td>{transfer.Bags.map(bag=><td>{`   ${bag}  `}</td>)}</td>
+                        <td>{transfer.Bags.map(bag=><td>{`| ${bag} |`}</td>)}</td>
                         <td>{transfer.time}</td>
                     </tr>
                     )

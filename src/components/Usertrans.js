@@ -25,8 +25,8 @@ const Usertrans = ({orders})=>{
                     <tr>
                         <td>{transfer.customerMetamaskAccount}</td>
                         <td>{transfer.shopId}</td>
-                        <td>{transfer.itemIds.map(item=><td>{`   ${item}  `}</td>)}</td>
-                        <td>{transfer.eachItemQuantities.map(quantity=><td>{`   ${quantity}  `}</td>)}</td>
+                        <td>{transfer.itemIds.map(item=><td>{`| ${item} |`}</td>)}</td>
+                        <td>{transfer.eachItemQuantities.map(quantity=><td>{`| ${quantity} |`}</td>)}</td>
                         <td>{transfer.time}</td>
                     </tr>
                     )
