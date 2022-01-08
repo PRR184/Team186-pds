@@ -9,6 +9,9 @@ import {
   loadPDS,
 } from '../store/interactions'
 import { pdsLoadedSelector } from '../store/selectors'
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarComp from './NavbarComp';
 
 class App extends Component {
   componentWillMount() {
@@ -55,10 +58,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='App'>
+        <NavbarComp/>
         {/* <Navbar /> */}
         { this.props.contractsLoaded ? <div>ContractLoaded(show content)</div>  : <div >Failure</div> }
       </div>
+      
     );
   }
 }
