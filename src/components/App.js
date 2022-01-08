@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
+import moment from 'moment'
+
 // import Navbar from './Navbar'
 // import Content from './Content'
 import { connect } from 'react-redux'
@@ -52,7 +54,7 @@ class App extends Component {
                 fromId:data.fromId,
                 toId:data.toId,
                 Bags:data.bagIds,
-                time:data.timestamp,
+                time:moment.unix(data.timestamp).format('dddd, MMMM Do, YYYY h:mm:ss A')
             }
     })
     console.log('transfers',transfers);
@@ -65,7 +67,7 @@ class App extends Component {
               fromId:data.fromId,
               toId:data.toId,
               Bags:data.bagIds,
-              time:data.timestamp,
+              time:moment.unix(data.timestamp).format('dddd, MMMM Do, YYYY h:mm:ss A')
           }
       })
     console.log('received',received);
@@ -79,7 +81,7 @@ class App extends Component {
         shopId:data.shopId,
         itemIds:data.itemIds,
         eachItemQuantities:data.quantities,
-        time:data.timestamp,
+        time:moment.unix(data.timestamp).format('dddd, MMMM Do, YYYY h:mm:ss A'),
 
     }
     })

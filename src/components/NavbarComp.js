@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import './App.css'
 import {
     BrowserRouter as Router,
     Switch,
@@ -41,7 +42,7 @@ const NavbarComp=({transfered,received, orders})=>{
                                 <NavDropdown
                                     id="nav-dropdown-dark-example"
                                     title="Result"
-                                    menuVariant="dark"
+                                    menuVariant="primary"
                                 >
                                     <NavDropdown.Item>                                 
                                         <Nav.Link as={Link} to="/districtres">View District Results</Nav.Link>
@@ -59,10 +60,10 @@ const NavbarComp=({transfered,received, orders})=>{
                                     menuVariant="dark"
                                 >
                                     <NavDropdown.Item>                                 
-                                        <Nav.Link as={Link} to="/adddistrict">Add a District</Nav.Link>
+                                        <Nav.Link as={Link} to="/adddistrict" class = "Dropdown">Add a District</Nav.Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item> 
-                                        <Nav.Link as={Link} to="/addconsumer">Add a Consumer</Nav.Link>
+                                        <Nav.Link as={Link} to="/addconsumer" class = "Dropdown">Add a Consumer</Nav.Link>
                                     </NavDropdown.Item> 
                                 </NavDropdown>
 
@@ -80,7 +81,7 @@ const NavbarComp=({transfered,received, orders})=>{
                         </Route>
 
                     <Route path="/districtres">
-                            <Districtres />
+                            <Districtres transfered={transfered} received={received} orders={orders}/>
                         </Route>
 
                     <Route path="/adddistrict">
