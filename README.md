@@ -3,6 +3,7 @@
 This is the official repository of DotSlash 5.0 Submission for Team 186 - **Snake_Eyes**.
 
 Problem Statement Topic : **Open Innovation**
+<br>
 Project Name  : **Public Distribution System (PDS)**
 
 Team Members:
@@ -19,6 +20,8 @@ The covid era taught us that getting a meal, once a day was one of the biggest c
 ## Working
 
 We intend to provide transparency in the supply-chain of food using Blockchain. The supply would be tracked from the origin till it reaches the end user using Identifiers packed with bags which will be added to the blockchain at each stage of network. Thus, alteration of the records will be impossible. The state government would generate the identifiers which will be further carried to the the district authorities and the ration shops and also the quantities of foods are tracked to verify the distribution between RationShops and Consumers. Thus the verification of goods will be ensured at every checkpoint which ensures that no frauds or corruption take place.
+
+![Flow Chart](https://github.com/aviraj1703/Team186-pds/blob/readme/img.png)
 
 
 ## Building it
