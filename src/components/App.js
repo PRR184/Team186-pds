@@ -99,7 +99,6 @@ class App extends Component {
     return (
       <div className='App'>
         <NavbarComp transfered={this.state.transfered} received={this.state.received} orders={this.state.orders}/>
-        { this.props.contractsLoaded ? <div>ContractLoaded(show content)</div>  : <div >Failure</div> }
       </div>
     );
   }

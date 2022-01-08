@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Card } from 'react-bootstrap'
 import {Message} from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import { InputGroup,FormControl } from 'react-bootstrap'
@@ -15,7 +15,8 @@ class Details extends Component {
             name:'',
             address:'',
             location:'',
-        }
+        },
+        shopLoaded:false
     };
 
     onSubmit = async(event)=>{
@@ -25,7 +26,8 @@ class Details extends Component {
         try{
             const shop = await pds.methods.shops(this.state.id).call();
             this.setState({
-                shop:shop
+                shop:shop,
+                shopLoaded:true
             })
         }catch(e){
             this.setState({
@@ -37,6 +39,21 @@ class Details extends Component {
         });
     };
 
+    showCard=()=>{
+        return(
+            <Card style={{ width: '18rem' }}>
+            <Card.Body>
+                <Card.Title><h2>Owner:</h2>{this.state.shop.name}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted"><h2>ShopId:</h2>{this.state.shop.id}</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted"><h2>Metamask Account No:</h2>{this.state.shop.account}</Card.Subtitle>
+                <Card.Text>
+                <h2>ShopLocation</h2>
+                {this.state.shop.location}
+                </Card.Text>
+            </Card.Body>
+            </Card>
+        )
+    }
     render() {
         return (
             <div>
@@ -50,7 +67,7 @@ class Details extends Component {
 
                     <Button primary type="submit" loading={this.state.loading}>Create!</Button>
                 </Form>
-                {this.state.shop.name}
+                {this.state.shopLoaded?this.showCard():null}
             </div>
         )
     }
