@@ -44,7 +44,7 @@ class App extends Component {
     console.log('received',received);
 
     //OrdersMade
-    const ordersHistory = await pds.getPastEvents('Received', { fromBlock: 0, toBlock: 'latest' })
+    const ordersHistory = await pds.getPastEvents('Order', { fromBlock: 0, toBlock: 'latest' })
     const orders = await ordersHistory.map((event) => event.returnValues)
     console.log('orders',orders);    
     }catch(e){

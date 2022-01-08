@@ -79,7 +79,6 @@ contract PDS {
         uint256 id,
         address customerAddress,
         uint256 shopId,
-        //item_id=>quantity taken
         uint256[] itemIds,
         uint256[] quantities,
         uint256 timestamp
