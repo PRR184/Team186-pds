@@ -1,0 +1,26 @@
+import { get, groupBy, reject, maxBy, minBy } from 'lodash'
+import { createSelector } from 'reselect'
+import moment from 'moment'
+
+// TODO: Move me to helpers file
+export const formatBalance = (balance) => {
+  const precision = 100 // 2 decimal places
+
+  balance = ether(balance)
+  balance = Math.round(balance * precision) / precision // Use 2 decimal places
+
+  return balance
+}
+
+const account = state => get(state, 'web3.account')
+export const accountSelector = createSelector(account, a => a)
+
+const web3 = state => get(state, 'web3.connection')
+export const web3Selector = createSelector(web3, w => w)
+
+const pdsLoaded = state => get(state, 'pds.loaded', false)
+export const pdsLoadedSelector = createSelector(pdsLoaded, tl => tl)
+
+const pds = state => get(state, 'pds.contract')
+export const pdsSelector = createSelector(pds, t => t)
+
