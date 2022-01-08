@@ -3,6 +3,7 @@
 This is the official repository of DotSlash 5.0 Submission for Team 186 - **Snake_Eyes**.
 
 Problem Statement Topic : **Open Innovation**
+<br>
 Project Name  : **Public Distribution System (PDS)**
 
 Team Members:
@@ -19,51 +20,9 @@ The covid era taught us that getting a meal, once a day was one of the biggest c
 ## Working
 
 We intend to provide transparency in the supply-chain of food using Blockchain. The supply would be tracked from the origin till it reaches the end user using Identifiers packed with bags which will be added to the blockchain at each stage of network. Thus, alteration of the records will be impossible. The state government would generate the identifiers which will be further carried to the the district authorities and the ration shops and also the quantities of foods are tracked to verify the distribution between RationShops and Consumers. Thus the verification of goods will be ensured at every checkpoint which ensures that no frauds or corruption take place.
-```mermaid
-graph  TD
 
-A[State Government]  -->B(District 1)
+![Flow Chart](https://github.com/aviraj1703/Team186-pds/blob/readme/img.png)
 
-A[State Government]  -->C(District 2)
-
-A[State Government]  -->D(District 3)
-
-B  -->  E(Shop 1)
-
-B  -->  F(Shop 2)
-
-C  -->  G(Shop 1)
-
-C  -->  H(Shop 2)
-
-D  -->  I(Shop 1)
-
-D  -->  J(Shop 2)
-
-E  -->  K(User 1)
-
-E  -->  L(User 2)
-
-F  -->  M(User 1)
-
-F  -->  N(User 2)
-
-G  -->  O(User 1)
-
-G  -->  P(User 2)
-
-H  -->  Q(User 1)
-
-H  -->  R(User 2)
-
-I  -->  S(User 1)
-
-I  -->  T(User 2)
-
-J  -->  U(User 1)
-
-J  -->  V(User 2)
-```
 
 ## Building it
 - First, we deployed a **Smart Contract** which keeps track of all the users and transactions happenings in the network.
