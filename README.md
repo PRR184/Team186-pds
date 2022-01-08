@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Team 186 - Snake_Eyes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the official repository of DotSlash 5.0 Submission for Team 186 - **Snake_Eyes**.
 
-## Available Scripts
+Problem Statement Topic : **Open Innovation**
+<br>
+Project Name  : **Public Distribution System (PDS)**
 
-In the project directory, you can run:
+Team Members:
 
-### `npm start`
+- [Raghavendra Reddy](https://github.com/PRR184)
+- [Aviraj Rathod](https://github.com/aviraj1703)
+- [Hariom Vyas](https://github.com/Hariom1509)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Inspiration
 
-### `npm test`
+The covid era taught us that getting a meal, once a day was one of the biggest challenges which a lot of needy people faced. Many **RationShop** owners would store the stock in a large amount which is provided by Government to distribute to the needy ones, but they sell them for higher price, which makes the needy ones suffer. We, as responsible citizens of the nation, wanted to dismantle this situation and help the needy.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Working
 
-### `npm run build`
+We intend to provide transparency in the supply-chain of food using Blockchain. The supply would be tracked from the origin till it reaches the end user using Identifiers packed with bags which will be added to the blockchain at each stage of network. Thus, alteration of the records will be impossible. The state government would generate the identifiers which will be further carried to the the district authorities and the ration shops and also the quantities of foods are tracked to verify the distribution between RationShops and Consumers. Thus the verification of goods will be ensured at every checkpoint which ensures that no frauds or corruption take place.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Flow Chart](https://github.com/aviraj1703/Team186-pds/blob/readme/img.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Building it
+- First, we deployed a **Smart Contract** which keeps track of all the users and transactions happenings in the network.
+- We used **web3.js** to communicate with the smart contract.
+- We fetched the data by capturing the events when transactions happens in the network.
+- Lastly, we used ReactJS and fetched data to build the front end of the network.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stacks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Solidity
+- React JS
+- Truffle
+- Ethereum
+- MetaMask
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Challenges
+- Integrating Blockchain with the frontend while adding and fetching data.
+- Grouping the data to **verify the transactions** that are occuring at each stage of the network.
 
-## Learn More
+## Learnings and Achievements
+- This was the first time we tried to integrate Blockchain code written in solidity along with React JS which turned out to be a great learning experience.
+- The 36 hour long hackathon always inspired us at every moment to keep our calm and overcome the bugs which hindered our way.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Future Plans
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Fetching the Aadhar Card information and linking a crypto account with it to make the transactions through it.
+- Implementing this app not just for food grains but also generalizing it for many different commodities.
