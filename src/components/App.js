@@ -85,7 +85,9 @@ class App extends Component {
     })
     console.log('orders',orders);    
     this.setState({
-      transfered:transfers
+      transfered:transfers,
+      received:received,
+      orders:orders,
     })
     }catch(e){
       window.alert('Transactions not Fetching')
@@ -96,7 +98,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <NavbarComp transfered={this.state.transfered}/>
+        <NavbarComp transfered={this.state.transfered} received={this.state.received} orders={this.state.orders}/>
         { this.props.contractsLoaded ? <div>ContractLoaded(show content)</div>  : <div >Failure</div> }
       </div>
     );

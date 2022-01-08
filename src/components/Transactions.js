@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Form, Button ,Table} from 'react-bootstrap'
-import {Message} from 'semantic-ui-react';
-import { connect } from 'react-redux'
-import { pdsSelector } from '../store/selectors'
 
-const Transactions = ({transfered})=>{
-    console.log('transfered',transfered)
-    if(!transfered)
-        window.alert('Error!');
+
+const Transactions = ({transfered,received})=>{
+    if(!transfered || !received)
+        window.alert('Error in transactions!');
     return(
             <div>
                 <h2> Transfered Transactions </h2>
@@ -27,7 +24,17 @@ const Transactions = ({transfered})=>{
                     <tr>
                         <td>{transfer.fromId}</td>
                         <td>{transfer.toId}</td>
-                        <td>{transfer.Bags.map(bag=><td>{`${bag}-`}</td>)}</td>
+                        <td>{transfer.Bags.map(bag=><td>{`   ${bag}  `}</td>)}</td>
+                        <td>{transfer.time}</td>
+                    </tr>
+                    )
+                    })}
+                    {received.map(transfer=>{
+                    return (
+                    <tr>
+                        <td>{transfer.fromId}</td>
+                        <td>{transfer.toId}</td>
+                        <td>{transfer.Bags.map(bag=><td>{`   ${bag}  `}</td>)}</td>
                         <td>{transfer.time}</td>
                     </tr>
                     )

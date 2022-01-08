@@ -18,8 +18,7 @@ import Adddistrict from './Adddistrict';
 import Districtres from './Districtres';
 import Shopres from './Shopres';
 
-const NavbarComp=({transfered})=>{
-        console.log('transfered NavBar',transfered);
+const NavbarComp=({transfered,received, orders})=>{
         return (
             <Router>
                 <div>
@@ -97,11 +96,11 @@ const NavbarComp=({transfered})=>{
                         </Route>
 
                         <Route path="/usertrans">
-                            <Usertrans />
+                            <Usertrans orders={orders} />
                         </Route> 
 
                         <Route path="/transactions">
-                            <Transactions transfered={transfered}/>
+                            <Transactions transfered={transfered} received={received}/>
                         </Route>
 
                         <Route path="/details">
