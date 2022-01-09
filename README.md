@@ -30,6 +30,7 @@ We intend to provide transparency in the supply-chain of food using Blockchain. 
 
 - At Consumer Level, the shop owner will verify the consumers metamskAccount and will provide the grains(in Kgs), then the consumer will only be allowed to pay using metamsk account given by the government. So, if details provided in the bill are correct, consumer will do the transaction and it gets stored in database.
 - We can stop the shop Owner corruption by checking the quantity recieved from district and quantity sold to consumers, and only the real user with government given metamask account will be able to pay to the shopowner.Each and every process going on the network is being stored on blockchain database, so the chance of any kind of fraud activites or malpractices will be vanished.
+![Transaction](https://github.com/PRR184/Team186-pds/blob/main/transac.png)
 
 
 ## Building it
