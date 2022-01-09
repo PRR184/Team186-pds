@@ -39,28 +39,32 @@ class Details extends Component {
 
     showCard=()=>{
         return(
-            <Card style={{ width: '18rem' }}>
-            <Card.Body>
-                <Card.Title>Name: {this.state.shop.name}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">ShopId: {this.state.shop.id}</Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">Metamask Account No: {this.state.shop.account}</Card.Subtitle>
-                <Card.Text>
-                ShopLocation:<br/>
-                {this.state.shop.location}
-                </Card.Text>
-            </Card.Body>
-            </Card>
+            <div className='card'>
+                <Card className='Cards'>
+                <Card.Body>
+                    <Card.Title>Name: {this.state.shop.name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">ShopId: {this.state.shop.id}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Metamask Account No: {this.state.shop.account}</Card.Subtitle>
+                    <Card.Text>
+                    ShopLocation:<br/>
+                    {this.state.shop.location}
+                    </Card.Text>
+                </Card.Body>
+                </Card>
+            </div>
         )
     }
     render() {
         return (
             <div>
-                <h2> Find the Shop Details Below!</h2>
+                <div className='heading1'>
+                    <h2 className='head'> Find the Shop Details Below!</h2>
+                </div>
                 
-                <Form onSubmit={this.onSubmit}>
+                <Form onSubmit={this.onSubmit} className='Har'>
                     <Form.Group className="mb-3" controlId="formBasicId">
                         <Form.Label>ShopId</Form.Label>
-                        <Form.Control type="text" placeholder="Id" onChange = { event => this.setState({id:event.target.value})}/>
+                        <Form.Control className='hr' type="text" placeholder="Id" onChange = { event => this.setState({id:event.target.value})}/>
                     </Form.Group>
 
                     <Button primary type="submit" loading={this.state.loading}>Create!</Button>

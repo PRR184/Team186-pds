@@ -35,12 +35,25 @@
 *{
   margin: 0%;
   padding: 0%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 body{
   background: linear-gradient(to right, #e0cdd7, #e9d4bb);
   overflow-y: hidden !important;
   width: 100%;
+}
+::-webkit-scrollbar{
+  background: linear-gradient(to right, #e0cdd7, #e9d4bb);
+  width: 0.6vw;
+}
+::-webkit-scrollbar-thumb{
+
+  background: linear-gradient(to right, orange, white, green);
+  border-radius: 20px;
+  width: 70%;
+}
+::-webkit-scrollbar-corner{
+  display: none;
 }
 .navb{
   box-sizing: border-box;
@@ -93,7 +106,34 @@ body{
   padding: 2%;
   margin: auto;
   width: 100%;
-  overflow-y: hidden !important;
+}
+.main img{
+  border-radius: 20px;
+}
+.hed{
+  font-family: cursive !important;
+  font-weight: bold;
+  overflow-y: hidden;
+  text-align: center;
+}
+.left{
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1%;
+  width: 47%;
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: linear-gradient(to right, #dbbccd, #f3d4ae);
+  box-shadow: 0.7px -0.7px 2px 2px whitesmoke;
+}
+.bottom{
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1%;
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+  box-shadow: 0.7px -0.7px 2px 2px whitesmoke;
+  background: linear-gradient(to right, #dbbccd, #f3d4ae);
 }
 
 .Har {
@@ -139,9 +179,26 @@ body{
   padding: 1%;
   margin: 1%;
 }
+.temp{
+  text-align: center;
+}
 
 .bottom{
   text-align: center;
   padding: 1%;
   margin: 10%;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(to right, #e0cdd7, #e9d4bb);
+  height: auto;
+}
+.Cards{
+  width: 25rem;
+  background: linear-gradient(to right, #cddae0, #bbe9ce);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

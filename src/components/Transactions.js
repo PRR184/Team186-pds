@@ -7,7 +7,9 @@ const Transactions = ({transfered,received})=>{
         window.alert('Error in transactions!');
     return(
             <div>
-                <h2> Transfered Transactions </h2>
+                <div className='heading1'>
+                    <h2 className='head'> Transfered Transactions </h2>
+                </div>
                 <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -32,7 +34,9 @@ const Transactions = ({transfered,received})=>{
                 </tbody>
                 </Table>
 
-                <h2> Received Transactions </h2>
+                <div className='heading1'>
+                    <h2 className='head'> Received Transactions </h2>
+                </div>
                 <Table striped bordered hover>
                 <thead>
                     <tr>

@@ -19,6 +19,7 @@ import Districtres from './Districtres';
 import Shopres from './Shopres';
 import Transfer from './Transfer';
 import AddReceivedBags from './AddReceivedBags';
+import img from '../pds_logo.png';
 
 const NavbarComp=({transfered,received, orders})=>{
         return (
@@ -26,7 +27,7 @@ const NavbarComp=({transfered,received, orders})=>{
                 <div className='navb'>
 
                     <Navbar bg="dark" variant={"dark"} expand="lg" className='nvb'>
-                        {/* <Navbar.Brand><img src="Logo.png"  /></Navbar.Brand> */}
+                        <Navbar.Brand><img src={img} width='12%' /></Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
                             <Nav

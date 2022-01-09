@@ -4,7 +4,8 @@ import { groupBy } from "lodash";
 
 function Districtres({ transfered, received, orders }) {
   if (!transfered || !received) window.alert("Error in transactions!");
-  const transfers = groupBy(transfered, "fromId");
+  const p = transfered.filter(o=>o.toId>80);
+  const transfers = groupBy(p, "fromId");
   const results = Object.values(transfers).map((t) => {
     const shops = t.map((transfer) => {
       const shid = transfer.toId; //d=1 s=100
@@ -29,6 +30,7 @@ function Districtres({ transfered, received, orders }) {
         shopIds: shops.map(shop=>shop.shopID),
         total: shops.map(shop=>shop.total),
         bags: shops.map(shop=>shop.bags),
+        quantity: shops.map(shop=>shop.bags*100)
     };
 
   });
@@ -36,17 +38,20 @@ function Districtres({ transfered, received, orders }) {
   console.log("results", results);
   return (
     <div>
-      <h1>View of District Results(Assumed Each Bag contains 10Kg)</h1>
-      <Table borderless dark hover responsive size="sm" striped >
+      <div className="heading1">
+        <h2 className="head">View of District Results(Assumed Each Bag contains 100Kg)</h2>
+      </div>
+      <Table borderless dark hover responsive size="m" striped className="table">
         <thead style={{'text-align':'centre'}}>
           <tr>
             <th>District Id</th>  
             <th>Shop Id</th>
             <th>No of Bags Sent to Shop</th>
+            <th>Quantity provided to Shop</th>
             <th>Total Quantity Sold(Kg)</th>
           </tr>
         </thead>
-        <tbody style={{'text-align':'centre'}}>
+        <tbody style={{'text-align':'centre'}} className="temp">
             {results.map(district=>{
                 return(
                     <tr>
@@ -62,6 +67,15 @@ function Districtres({ transfered, received, orders }) {
                         </td>
                         <td>
                         {district.bags.map(shop=>{
+                                return(
+                                    <tr>
+                                        <td>{shop}</td>
+                                    </tr>
+                                )
+                            })}
+                        </td>
+                        <td>
+                        {district.quantity.map(shop=>{
                                 return(
                                     <tr>
                                         <td>{shop}</td>
