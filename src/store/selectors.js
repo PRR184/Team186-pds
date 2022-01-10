@@ -1,7 +1,5 @@
-import { get, groupBy, reject, maxBy, minBy } from 'lodash'
+import { get } from 'lodash'
 import { createSelector } from 'reselect'
-import moment from 'moment'
-
 
 const account = state => get(state, 'web3.account')
 export const accountSelector = createSelector(account, a => a)

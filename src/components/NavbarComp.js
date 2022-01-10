@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import React from 'react'
+import { Navbar, Nav} from 'react-bootstrap'
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,10 +13,10 @@ import Details from './Details';
 import Transactions from './Transactions';
 import Usertrans from './Usertrans';
 import Results from './Results';
-import Addconsumer from './Addconsumer';
-import Adddistrict from './Adddistrict';
+// import Addconsumer from './Addconsumer';
+// import Adddistrict from './Adddistrict';
 import Districtres from './Districtres';
-import Shopres from './Shopres';
+// import Shopres from './Shopres';
 import Transfer from './Transfer';
 import AddReceivedBags from './AddReceivedBags';
 import img from '../pds_logo.png';
@@ -27,7 +27,7 @@ const NavbarComp=({transfered,received, orders})=>{
                 <div className='navb'>
 
                     <Navbar bg="dark" variant={"dark"} expand="lg" className='nvb'>
-                        <Navbar.Brand><img src={img} width='12%' /></Navbar.Brand>
+                        <Navbar.Brand><img src={img} width='12%' alt='PDS'/></Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
                             <Nav

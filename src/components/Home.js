@@ -33,7 +33,7 @@ export default class Home extends Component {
                     </div>
 
                     <div class="right">
-                        <img class="d-block w-150 h-150" src={img} alt="Image"/>
+                        <img class="d-block w-150 h-150" src={img} alt="PDS"/>
                     </div>
                 </div>
                 <div class = "bottom">

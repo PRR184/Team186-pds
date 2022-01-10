@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Form, Button ,Table} from 'react-bootstrap'
+import React  from 'react'
+import { Table} from 'react-bootstrap'
 
 
 const Transactions = ({transfered,received})=>{
