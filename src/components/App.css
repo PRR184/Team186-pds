@@ -57,7 +57,7 @@ body{
 }
 .navb{
   box-sizing: border-box;
-  box-shadow: 1px 1px 2px 2px black;
+  box-shadow: 1.5x 1.5x 2.5px 2.5px rgb(70, 64, 64);
   margin: auto;
   border-radius: 5px;
   width: 100%;
@@ -81,8 +81,9 @@ body{
   transition: ease-in-out 1s;
 }
 .header:hover{
-  color: white;
+  color: crimson !important;
   transform: scale(0.9);
+  text-shadow: none;
 }
 .heading1{
   width: 100%;
