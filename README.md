@@ -62,3 +62,6 @@ We intend to provide transparency in the supply-chain of food using Blockchain. 
 - Fetching the Aadhar Card information and linking a crypto account with it to make the transactions through it.
 - Implementing this app not just for food grains but also generalizing it for many different commodities.
 
+## Links
+- [Demo Video](https://youtu.be/EIseC_4NrEk).
+
